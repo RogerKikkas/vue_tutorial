@@ -1,43 +1,32 @@
-Vue.component('message', {
-    props: ['title', 'body'],
+Vue.component('modal', {
 
-    data() {
-        return {
-            isVisible: true
-        };
-    },
 
     template: `
-        <article class="message" v-show="isVisible">
-            <div class="message-header">
-                {{ title }}
-                
-                <button type="button" class="close" @click="isVisible = false">X</button>
+        <div class="modal is-active">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <slot></slot>
+                </div>
             </div>
 
-            <div class="message-body">
-                {{ body }}
-            </div>
-        </article>
+            <button class="modal-close" @click="$emit('close')"></button>
+        </div>
     `,
-
-    methods: {
-        hideModal() {
-            this.isVisible = false;
-        }
-    }
 });
+
 
 var app = new Vue({
     el: '#root',
     data: {
-
+        showModal: false
     }
 });
 
 /*
 Vue.component('task-list', {
     template: `
+    /*
         <div>
             <task v-for="task in tasks">{{ task.task }}</task>
         </div>
@@ -57,5 +46,37 @@ Vue.component('task-list', {
 
 Vue.component('task', {
     template: '<li><slot></slot></li>',
+});
+*/
+
+/*
+Vue.component('message', {
+    props: ['title', 'body'],
+
+    data() {
+        return {
+            isVisible: true
+        };
+    },
+
+    template: `
+    <article class="message" v-show="isVisible">
+    <div class="message-header">
+{{ title }}
+
+<button type="button" class="close" @click="isVisible = false">X</button>
+</div>
+
+<div class="message-body">
+{{ body }}
+</div>
+</article>
+`,
+
+    methods: {
+        hideModal() {
+            this.isVisible = false;
+        }
+    }
 });
 */
