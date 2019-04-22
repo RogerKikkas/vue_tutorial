@@ -1,3 +1,114 @@
+Vue.component('coupon', {
+   template: `
+        <input placeholder="Enter your coupon code" @blur="onCouponApplied">
+   `,
+
+    methods: {
+       onCouponApplied() {
+           this.$emit('applied')
+       }
+    }
+});
+
+var app = new Vue({
+    el: '#root',
+    data: {
+        couponApplied: false
+    },
+
+    methods: {
+        onCouponApplied() {
+            this.couponApplied = true;
+        }
+    }
+});
+
+// TASKS
+
+/*
+Vue.component('task-list', {
+    template: `
+    /*
+        <div>
+            <task v-for="task in tasks">{{ task.task }}</task>
+        </div>
+    `,
+
+    data() {
+        return {
+            tasks: [
+                { task: 'Go to the store', complete: true },
+                { task: 'Go to the mall', complete: false },
+                { task: 'Go to the farm', complete: true },
+                { task: 'Go to work', complete: false },
+            ]
+        }
+    }
+});
+
+Vue.component('task', {
+    template: '<li><slot></slot></li>',
+});
+*/
+
+// MESSAGE
+
+/*
+Vue.component('message', {
+    props: ['title', 'body'],
+
+    data() {
+        return {
+            isVisible: true
+        };
+    },
+
+    template: `
+    <article class="message" v-show="isVisible">
+    <div class="message-header">
+{{ title }}
+
+<button type="button" class="close" @click="isVisible = false">X</button>
+</div>
+
+<div class="message-body">
+{{ body }}
+</div>
+</article>
+`,
+
+    methods: {
+        hideModal() {
+            this.isVisible = false;
+        }
+    }
+});
+*/
+
+// MODAL
+
+/*
+Vue.component('modal', {
+
+
+    template: `
+        <div class="modal is-active">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="box">
+                    <slot></slot>
+                </div>
+            </div>
+
+            <button class="modal-close" @click="$emit('close')"></button>
+        </div>
+    `,
+});
+*/
+
+// TABS
+
+/*
 Vue.component('tabs', {
     template: `
         <div>
@@ -8,7 +119,7 @@ Vue.component('tabs', {
                     </li>
                 </ul>
             </div>
-            
+
             <div class="tabs-details">
                 <slot></slot>
             </div>
@@ -59,88 +170,5 @@ Vue.component('tab', {
     mounted() {
         this.isActive = this.selected;
     }
-});
-
-var app = new Vue({
-    el: '#root',
-    data: {
-        showModal: false
-    }
-});
-
-/*
-Vue.component('task-list', {
-    template: `
-    /*
-        <div>
-            <task v-for="task in tasks">{{ task.task }}</task>
-        </div>
-    `,
-
-    data() {
-        return {
-            tasks: [
-                { task: 'Go to the store', complete: true },
-                { task: 'Go to the mall', complete: false },
-                { task: 'Go to the farm', complete: true },
-                { task: 'Go to work', complete: false },
-            ]
-        }
-    }
-});
-
-Vue.component('task', {
-    template: '<li><slot></slot></li>',
-});
-*/
-
-/*
-Vue.component('message', {
-    props: ['title', 'body'],
-
-    data() {
-        return {
-            isVisible: true
-        };
-    },
-
-    template: `
-    <article class="message" v-show="isVisible">
-    <div class="message-header">
-{{ title }}
-
-<button type="button" class="close" @click="isVisible = false">X</button>
-</div>
-
-<div class="message-body">
-{{ body }}
-</div>
-</article>
-`,
-
-    methods: {
-        hideModal() {
-            this.isVisible = false;
-        }
-    }
-});
-*/
-
-/*
-Vue.component('modal', {
-
-
-    template: `
-        <div class="modal is-active">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <div class="box">
-                    <slot></slot>
-                </div>
-            </div>
-
-            <button class="modal-close" @click="$emit('close')"></button>
-        </div>
-    `,
 });
 */
