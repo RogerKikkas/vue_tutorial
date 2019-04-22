@@ -1,3 +1,41 @@
+Vue.component('message', {
+    props: ['title', 'body'],
+
+    data() {
+        return {
+            isVisible: true
+        };
+    },
+
+    template: `
+        <article class="message" v-show="isVisible">
+            <div class="message-header">
+                {{ title }}
+                
+                <button type="button" class="close" @click="isVisible = false">X</button>
+            </div>
+
+            <div class="message-body">
+                {{ body }}
+            </div>
+        </article>
+    `,
+
+    methods: {
+        hideModal() {
+            this.isVisible = false;
+        }
+    }
+});
+
+var app = new Vue({
+    el: '#root',
+    data: {
+
+    }
+});
+
+/*
 Vue.component('task-list', {
     template: `
         <div>
@@ -20,10 +58,4 @@ Vue.component('task-list', {
 Vue.component('task', {
     template: '<li><slot></slot></li>',
 });
-
-var app = new Vue({
-    el: '#root',
-    data: {
-
-    }
-});
+*/
