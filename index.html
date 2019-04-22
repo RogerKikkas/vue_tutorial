@@ -5,41 +5,12 @@
 </head>
 <body>
     <div id="root">
-        <h2>All Tasks</h2>
-
-        <ul>
-            <li v-for="task in tasks" v-text="task.description"></li>
-        </ul>
-
-        <h2>Incomplete Tasks</h2>
-
-        <ul>
-            <li v-for="task in incompleteTasks" v-text="task.description"></li>
-        </ul>
+        <task>Got to the store</task>
+        <task>Got to the bank</task>
+        <task>Got to work</task>
     </div>
 
     <script src="js/vue.js"></script>
-
-    <script>
-        var app = new Vue({
-            el: '#root',
-            data: {
-                tasks: [
-                    { description: 'Go to the store', completed: true },
-                    { description: 'Finish screencast', completed: false },
-                    { description: 'Make donation', completed: false },
-                    { description: 'Clear inbox', completed: false },
-                    { description: 'Make dinner', completed: false },
-                    { description: 'Clean room', completed: true }
-                ]
-            },
-
-            computed: {
-                incompleteTasks() {
-                    return this.tasks.filter(task => !task.completed);
-                }
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
