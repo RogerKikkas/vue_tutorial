@@ -11,9 +11,16 @@
 </head>
 <body>
     <div id="root" class="container">
-        <coupon @applied="onCouponApplied"></coupon>
+        <modal>
+            <template slot="header">My Title</template>
 
-        <h1 v-if="couponApplied">You used a coupon!</h1>
+            Here is my main content.
+
+            <div slot="footer">
+                <a class="button is-primary">Save changes</a>
+                <a class="button">Cancel</a>
+            </div>
+        </modal>
     </div>
 
     <script src="js/vue.js"></script>
