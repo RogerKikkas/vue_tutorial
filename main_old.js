@@ -1,8 +1,4 @@
-Vue.component('progress-view', {
-   data() {
-       return { completionRate: 50 }
-   }
-});
+
 
 var app = new Vue({
     el: '#root',
@@ -225,5 +221,15 @@ Vue.component('modal', {
           </div>
         </div>
     `
+});
+*/
+
+// SINGLE-USE COPMPONENT AND INLINE TEMPLATE
+
+/*
+Vue.component('progress-view', {
+   data() {
+       return { completionRate: 50 }
+   }
 });
 */

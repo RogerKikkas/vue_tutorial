@@ -1,3 +1,18 @@
-Following laracasts Vue2: Step By Step tutorial
+# vue_tutorial
 
-https://laracasts.com/series/learn-vue-2-step-by-step
+> A Vue.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+```
+
+For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
