@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <Message>Hello There</Message>
+    <counter></counter>
   </div>
 </template>
 
 <script>
   import Message from './components/Message';
+  import Counter from './components/Counter';
 
   export default {
     name: 'app',
-    components: { Message },
+    components: { Message, Counter },
     data () {
       return {
 
