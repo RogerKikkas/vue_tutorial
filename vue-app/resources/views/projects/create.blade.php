@@ -15,16 +15,16 @@
             <div class="control">
                 <label for="name" class="label">Project Name:</label>
 
-                <input type="text" id="name" name="name" class="input" v-model="name">
+                <input type="text" id="name" name="name" class="input" v-model="form.name">
 
-                <span class="help is-danger" v-text="errors.get('name')"></span>
+                <span class="help is-danger" v-text="form.errors.get('form.name')"></span>
             </div>
 
             <div class="control">
                 <label for="description" class="label">Project Description:</label>
 
-                <input type="text" id="description" name="description" class="input" v-model="description" required>
-                <span class="help is-danger" v-text="errors.get('description')"></span>
+                <input type="text" id="description" name="description" class="input" v-model="form.description" required>
+                <span class="help is-danger" v-text="form.errors.get('form.description')"></span>
             </div>
 
             <div class="control">
