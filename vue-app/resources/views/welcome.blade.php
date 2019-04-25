@@ -10,10 +10,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
-            <ul>
-                <li v-for="skill in skills" v-text="skill"></li>
-            </ul>
+
+        <div id="one">
+            <h1>
+                @{{ user.name }}
+            </h1>
+        </div>
+
+        <div id="two">
+            <h1>
+                @{{ user.name }}
+            </h1>
         </div>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
