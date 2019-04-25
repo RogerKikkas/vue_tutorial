@@ -11,16 +11,10 @@
     </head>
     <body>
 
-        <div id="one">
-            <h1>
-                @{{ user.name }}
-            </h1>
-        </div>
+        <div id="app">
+            <!-- <input type="text" v-model="coupon"> -->
 
-        <div id="two">
-            <h1>
-                @{{ user.name }}
-            </h1>
+            <coupon v-model="coupon">
         </div>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
