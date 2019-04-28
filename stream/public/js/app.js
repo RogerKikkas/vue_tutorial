@@ -4546,17 +4546,20 @@ __webpack_require__.r(__webpack_exports__);
       statuses: []
     };
   },
+  filters: {
+    ago: function ago(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_0___default.a.utc(date).fromNow();
+    },
+    capitalize: function capitalize(value) {
+      return value.toUpperCase();
+    }
+  },
   created: function created() {
     var _this = this;
 
     _models_Status__WEBPACK_IMPORTED_MODULE_1__["default"].all().then(function (response) {
       return _this.statuses = response.data;
     });
-  },
-  methods: {
-    postedOn: function postedOn(status) {
-      return moment__WEBPACK_IMPORTED_MODULE_0___default()(status.created_at).fromNow();
-    }
   }
 });
 
@@ -57567,7 +57570,9 @@ var render = function() {
               _c("p", [
                 _vm._v(
                   "\n                        " +
-                    _vm._s(_vm.postedOn(status)) +
+                    _vm._s(
+                      _vm._f("capitalize")(_vm._f("ago")(status.created_at))
+                    ) +
                     "\n                    "
                 )
               ])

@@ -9,7 +9,7 @@
                         </p>
 
                         <p>
-                            {{ postedOn(status) }}
+                            {{ status.created_at | ago | capitalize }}
                         </p>
                     </div>
 
@@ -31,15 +31,19 @@
             }
         },
 
+        filters: {
+            ago(date) {
+                return moment.utc(date).fromNow();
+            },
+
+            capitalize(value) {
+                return value.toUpperCase();
+            }
+        },
+
         created() {
             Status.all()
                 .then(response => this.statuses = response.data);
-        },
-
-        methods: {
-            postedOn(status) {
-                return moment(status.created_at).fromNow();
-            }
         }
     }
 </script>
